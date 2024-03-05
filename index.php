@@ -11,8 +11,11 @@ function printSmiley(){
 function getNextPage($to){
     global $numPage;
     if($to === 'minus'){
-        
-        return $_GET['page'] - 1;
+        if(isset($_GET['page'])){
+            return $_GET['page'] - 1;
+        }else{
+            return 0;
+        }
     }
     if($to === 'plus'){
         return $numPage + 1;
